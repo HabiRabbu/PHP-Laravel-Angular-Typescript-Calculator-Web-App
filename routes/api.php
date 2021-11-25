@@ -19,3 +19,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::post('add', 'App\Http\Controllers\MathController@add');
+
+Route::post('subtract', 'App\Http\Controllers\MathController@subtract');
+
+Route::post('multiply', 'App\Http\Controllers\MathController@multiply');
+
+Route::post('divide', 'App\Http\Controllers\MathController@divide');
+
+
+Route::get('ReturnHistory', 'App\Http\Controllers\ResponseController@ReturnHistory');

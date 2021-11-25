@@ -16,22 +16,62 @@ class MathController extends BaseController
 
         $num1 = $request->input('firstnumber');
         $num2 = $request->input('secondnumber');
+        $operand = '+';
         $result = 0;
         $result = $num1 + $num2;
 
-        $this->store($num1, $num2, $result);
+        $this->store($num1, $num2, $result, $operand);
 
         return response($result);
     }
 
-    public function store($num1, $num2, $result)
+    public function subtract(Request $request){
+
+        $num1 = $request->input('firstnumber');
+        $num2 = $request->input('secondnumber');
+        $operand = '-';
+        $result = 0;
+        $result = $num1 - $num2;
+
+        $this->store($num1, $num2, $result, $operand);
+
+        return response($result);
+    }
+
+    public function multiply(Request $request){
+
+        $num1 = $request->input('firstnumber');
+        $num2 = $request->input('secondnumber');
+        $operand = '*';
+        $result = 0;
+        $result = $num1 * $num2;
+
+        $this->store($num1, $num2, $result, $operand);
+
+        return response($result);
+    }
+
+    public function divide(Request $request){
+
+        $num1 = $request->input('firstnumber');
+        $num2 = $request->input('secondnumber');
+        $operand = '/';
+        $result = 0;
+        $result = $num1 / $num2;
+
+        $this->store($num1, $num2, $result, $operand);
+
+        return response($result);
+    }
+
+    public function store($num1, $num2, $result, $operand)
     {
 
         $calculationModel = new CalculationModel;
 
         $calculationModel->num1 = $num1;
         $calculationModel->num2 = $num2;
-        $calculationModel->operand = '+';
+        $calculationModel->operand = $operand;
         $calculationModel->result = $result;
         $calculationModel->timestamp = now();
 
