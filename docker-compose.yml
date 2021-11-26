@@ -26,6 +26,14 @@ services:
             - redis
             - meilisearch
             - selenium
+    #angular-frontend:
+        #container_name: angular-frontend
+        #build: ./angular-frontend
+        #ports:
+        #    - '4200:4200'
+        #volumes:
+        #    - './node_modules'
+        #    - '.:/usr/src/app'
     mysql:
         image: 'mysql/mysql-server:8.0'
         ports:
