@@ -15,7 +15,7 @@ class ResponseController extends BaseController
     public function ReturnHistory(){
 
 
-        return response(CalculationModel::paginate(5));
+        return response()->json(CalculationModel::paginate(5));
     }
 
 }

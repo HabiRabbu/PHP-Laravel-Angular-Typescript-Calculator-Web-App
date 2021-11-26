@@ -2,12 +2,8 @@ FROM node:latest as node
 
 WORKDIR /app
 
-COPY package.json package-lock.json /app
-
-RUN npm install
-
-COPY . /app
+COPY conf/entrypoint.sh /entrypoint.sh
 
 EXPOSE 4200
 
-CMD npm run start
+CMD ["/bin/bash", "/entrypoint.sh"]
