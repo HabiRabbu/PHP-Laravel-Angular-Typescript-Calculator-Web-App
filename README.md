@@ -1,1 +1,1 @@
-Calculator using Laravel/Angular/Docker
+Web Calculator using Laravel/MySQL/Angular/Docker
